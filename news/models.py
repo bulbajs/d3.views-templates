@@ -60,8 +60,11 @@ class Post(models.Model):
         self.rating -= 1
         self.save()
 
-    def preview(self):
-        return '{} ... {}'.format(self.text[0:123], str(self.rating))
+    # def preview(self):
+    #     return '{} ... {}'.format(self.text[0:123], str(self.rating))
+
+    def __str__(self):
+        return f'{self.title}:{self.text[:50]}'
 
 
 class PostCategory(models.Model):
