@@ -1,5 +1,7 @@
 {% extends 'flatpages/default.html' %}
 
+{% load custom_filters %}
+
 {% block title%}
 News
 {% endblock title%}
@@ -14,7 +16,7 @@ News
 <br>
 
 <h2 style="text-align: left;">{{post.title}}</h2>
-<p style="text-align: left; text-indent: 25px;"><em>{{post.text}}<br/></em></p><hr>
+<p style="text-align: left; text-indent: 25px;"><em>{{post.text| censor}}<br/></em></p><hr>
 <p style="text-align: left;"><em>{{post.time_out|date:'d D M Y'}}</em></p>
 
 {% endblock content %}
